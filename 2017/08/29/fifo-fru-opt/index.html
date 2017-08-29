@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="FIFO,LRU,OPT,算法," />
 
 
 
@@ -90,16 +90,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="一、OPT（最佳页面置换算法）（看未来）该算法选择置换下次访问距当前时间最长的那些页，可以看出该算法可以导致最少的缺页中断，但它要求操作系统能够预知未来的时间，这是不可能实现的，但是该算法可以作为一种标准来衡量其他算法的性能 二、LRU（最近最少使用）   （看过去）置换内存中上次使用距当前最远的页。根据局部性原理，这也是最近最不可能访问的页，实际上，LRU策略的性能接近于OPT，该方法的问题是难">
+<meta name="keywords" content="FIFO,LRU,OPT,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/08/29/hello-world/index.html">
+<meta property="og:title" content="页面置换算法：FIFO、LRU、OPT">
+<meta property="og:url" content="http://yoursite.com/2017/08/29/fifo-fru-opt/index.html">
 <meta property="og:site_name" content="Yxrswx 的个人空间">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-08-29T10:06:23.614Z">
+<meta property="og:description" content="一、OPT（最佳页面置换算法）（看未来）该算法选择置换下次访问距当前时间最长的那些页，可以看出该算法可以导致最少的缺页中断，但它要求操作系统能够预知未来的时间，这是不可能实现的，但是该算法可以作为一种标准来衡量其他算法的性能 二、LRU（最近最少使用）   （看过去）置换内存中上次使用距当前最远的页。根据局部性原理，这也是最近最不可能访问的页，实际上，LRU策略的性能接近于OPT，该方法的问题是难">
+<meta property="og:updated_time" content="2017-08-29T11:21:50.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="页面置换算法：FIFO、LRU、OPT">
+<meta name="twitter:description" content="一、OPT（最佳页面置换算法）（看未来）该算法选择置换下次访问距当前时间最长的那些页，可以看出该算法可以导致最少的缺页中断，但它要求操作系统能够预知未来的时间，这是不可能实现的，但是该算法可以作为一种标准来衡量其他算法的性能 二、LRU（最近最少使用）   （看过去）置换内存中上次使用距当前最远的页。根据局部性原理，这也是最近最不可能访问的页，实际上，LRU策略的性能接近于OPT，该方法的问题是难">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/29/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/29/fifo-fru-opt/"/>
 
 
 
 
 
-  <title>Hello World | Yxrswx 的个人空间</title>
+  <title>页面置换算法：FIFO、LRU、OPT | Yxrswx 的个人空间</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/fifo-fru-opt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yxrswx">
@@ -279,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">页面置换算法：FIFO、LRU、OPT</h1>
         
 
         <div class="post-meta">
@@ -291,7 +292,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T18:06:23+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T19:21:50+08:00">
                 2017-08-29
               </time>
             
@@ -314,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo教程</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -348,15 +349,16 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="一、OPT（最佳页面置换算法）（看未来）"><a href="#一、OPT（最佳页面置换算法）（看未来）" class="headerlink" title="一、OPT（最佳页面置换算法）（看未来）"></a>一、OPT（最佳页面置换算法）（看未来）</h2><p>该算法选择置换下次访问距当前时间最长的那些页，可以看出该算法可以导致最少的缺页中断，但它<strong>要求操作系统能够预知未来的时间</strong>，这是不可能实现的，但是该算法可以作为一种标准来衡量其他算法的性能</p>
+<h2 id="二、LRU（最近最少使用）-（看过去）"><a href="#二、LRU（最近最少使用）-（看过去）" class="headerlink" title="二、LRU（最近最少使用）   （看过去）"></a>二、LRU（最近最少使用）   （看过去）</h2><p>置换内存中上次使用距当前最远的页。根据局部性原理，这也是最近最不可能访问的页，实际上，LRU策略的性能接近于OPT，该方法的问题是难于实现。一种方法是给每一页添加一个最后访问的时间标签，并且每次访问存储器时都要更新这个标签。即使有支持这种方案的硬件，开销也是很大。另一种可选择的方法是维护一个关于访问页的栈，但是开销仍然很大</p>
+<h2 id="三、FIFO策略（先进先出）"><a href="#三、FIFO策略（先进先出）" class="headerlink" title="三、FIFO策略（先进先出）"></a>三、FIFO策略（先进先出）</h2><p>该策略把分配给进程的页框看成一个循环缓冲区，按循环移动页，它所需要的只是一个指针，该指针在进程的页框中循环，因此这是实现起来最简单的页面置换策略。该策略置换出那些在页框中驻留时间最久的页，认为驻留时间最久了，到现在可能不再用了。这个推断是错误的，因为会经常出现一部分程序或数据在整个程序的生命周期中使用频率都很高的情况，如果使用该算法，则这些页需要反复的调入调出。</p>
+<h2 id="四、-时钟策略"><a href="#四、-时钟策略" class="headerlink" title="四、 时钟策略"></a>四、 时钟策略</h2><p>最简单的时钟策略需要给每一页框关联一个附加位，称为使用位。当某一页首次装入内存中时，则将该页页框的使用位设置为1；当该页随后被访问到时（在访问产生缺页中断之后），它的使用位也会被设置为1。<br>对于页面置换算法，用于置换算法，用于置换的候选页框集合（当前进程：局部范围；整个内存；全局范围）被看做是一个循环缓冲区，并且有一个指针针与之相关联。当一页被置换时，该指针针被设置成指向缓冲区中的下一页框。<br>当需要置换一页时，操作系统扫描缓冲区，以查找使用位被置为0的一页框框。每当遇到一个使用位为1的页框框时，操作系统就将该位重新置为0；如果在这个过程开始时，缓冲区中所有页框的使用位均为0时，则选择遇到的第一个页框置换；如果所有页框的使用位均为1时，则指针针在缓冲区中完整地循环一周，把所有使用位都置为0，并且停留在最初的位置上，置换该页框中的页。<br>可见该策略类似于FIFO(先进先出)，唯一不同的是，在时钟策略中使用位为1的页框框被跳过，该策略之所以称为时钟策略，是因为可以把页框形象地想象成在一个环中。许多操作系统都采用这种简单时钟策略的某种变体。</p>
+<ul>
+<li>参考 <blockquote>
+<p><a href="http://blog.csdn.net/yunzhongguwu005/article/details/9191753" target="_blank" rel="external">http://blog.csdn.net/yunzhongguwu005/article/details/9191753</a></p>
+</blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -384,6 +386,18 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/FIFO/" rel="tag"># FIFO</a>
+          
+            <a href="/tags/LRU/" rel="tag"># LRU</a>
+          
+            <a href="/tags/OPT/" rel="tag"># OPT</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
 
       
         
@@ -393,14 +407,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/29/free-ddos/" rel="next" title="免费的DDOS攻击工具">
+                <i class="fa fa-chevron-left"></i> 免费的DDOS攻击工具
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/29/free-ddos/" rel="prev" title="免费的DDOS攻击工具">
-                免费的DDOS攻击工具 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/29/javascript-summary/" rel="prev" title="JavaScript总结">
+                JavaScript总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -530,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、OPT（最佳页面置换算法）（看未来）"><span class="nav-number">1.</span> <span class="nav-text">一、OPT（最佳页面置换算法）（看未来）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、LRU（最近最少使用）-（看过去）"><span class="nav-number">2.</span> <span class="nav-text">二、LRU（最近最少使用）   （看过去）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、FIFO策略（先进先出）"><span class="nav-number">3.</span> <span class="nav-text">三、FIFO策略（先进先出）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、-时钟策略"><span class="nav-number">4.</span> <span class="nav-text">四、 时钟策略</span></a></li></ol></div>
             
 
           </div>

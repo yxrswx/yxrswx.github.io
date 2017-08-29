@@ -1,0 +1,784 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript,总结," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="JS string转 int，Long  ，Date js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数 parseInt()可以转换为 integer  或者 Long var remindTime = “2008-04-02 10:08:44”;  直接new Date(remindTime )即可转换为Date格式的时间  JS i">
+<meta name="keywords" content="javascript,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript总结">
+<meta property="og:url" content="http://yoursite.com/2017/08/29/javascript-summary/index.html">
+<meta property="og:site_name" content="Yxrswx 的个人空间">
+<meta property="og:description" content="JS string转 int，Long  ，Date js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数 parseInt()可以转换为 integer  或者 Long var remindTime = “2008-04-02 10:08:44”;  直接new Date(remindTime )即可转换为Date格式的时间  JS i">
+<meta property="og:updated_time" content="2017-08-29T11:29:28.829Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript总结">
+<meta name="twitter:description" content="JS string转 int，Long  ，Date js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数 parseInt()可以转换为 integer  或者 Long var remindTime = “2008-04-02 10:08:44”;  直接new Date(remindTime )即可转换为Date格式的时间  JS i">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/29/javascript-summary/"/>
+
+
+
+
+
+  <title>JavaScript总结 | Yxrswx 的个人空间</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yxrswx 的个人空间</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/javascript-summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yxrswx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yxrswx 的个人空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T19:29:28+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="JS-string转-int，Long-，Date"><a href="#JS-string转-int，Long-，Date" class="headerlink" title="JS string转 int，Long  ，Date"></a>JS string转 int，Long  ，Date</h2><ul>
+<li>js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数</li>
+<li>parseInt()可以转换为 integer  或者 Long</li>
+<li>var remindTime = “2008-04-02 10:08:44”; </li>
+<li>直接new Date(remindTime )即可转换为Date格式的时间</li>
+</ul>
+<h2 id="JS-isNaN-函数"><a href="#JS-isNaN-函数" class="headerlink" title="JS isNaN()函数"></a>JS isNaN()函数</h2><ul>
+<li>isNaN() 函数用于检查其参数是否是非数字值。</li>
+</ul>
+<h2 id="JS-isNull-函数"><a href="#JS-isNull-函数" class="headerlink" title="JS isNull()函数"></a>JS isNull()函数</h2><ul>
+<li>isNull()函数 ：判断字段是否为null</li>
+</ul>
+<p><code>console.log(parseInt(&quot;&quot;)); //NaN</code><br><code>console.log(parseInt(null)); //NaN</code><br><code>console.log(parseInt(&quot;aa&quot;)); //NaN</code><br><code>console.log(parseInt(&quot;123&quot;)); //123</code><br><code>console.log(&quot;&quot;.toString() === &quot;&quot; ? true : false); //&quot;&quot;</code><br><code>console.log(&quot;aa&quot;.toString() === &quot;aa&quot; ? true : false); //&quot;aa&quot;</code><br><code>console.log(&quot;123&quot;.toString() === &quot;123&quot; ? true : false); //&quot;123&quot;</code></p>
+<h2 id="JS输出对象的内部结构"><a href="#JS输出对象的内部结构" class="headerlink" title="JS输出对象的内部结构"></a>JS输出对象的内部结构</h2><p><code>function dump_obj(myObject) {
+    var s = &quot;&quot;;
+    for (var property in myObject) {
+        s = s + &quot;\n &quot;+property +&quot;: &quot; + myObject[property] ;
+    }
+    console.log(s);
+}</code></p>
+<h2 id="JS获取select标签选中的值"><a href="#JS获取select标签选中的值" class="headerlink" title="JS获取select标签选中的值"></a>JS获取select标签选中的值</h2><p><code>var obj = document.getElementByIdx_x(”testSelect”);</code> //定位id<br><code>var index = obj.selectedIndex;</code>  // 选中索引<br><code>var text = obj.options[index].text;</code> // 选中文本<br><code>var value = obj.options[index].value;</code> // 选中值</p>
+<h2 id="JS当文本溢出包含元素时发生的事情"><a href="#JS当文本溢出包含元素时发生的事情" class="headerlink" title="JS当文本溢出包含元素时发生的事情"></a>JS当文本溢出包含元素时发生的事情</h2><p>text-overflow: clip|ellipsis|string;<br>其中：clip 修剪文本<br>          ellipsis 显示省略符号来代表被修剪的文本。<br>          string  使用给定的字符串来代表被修剪的文本。</p>
+<h2 id="JS-中获取-Date-的方法"><a href="#JS-中获取-Date-的方法" class="headerlink" title="JS 中获取 Date 的方法"></a>JS 中获取 Date 的方法</h2><p><code>var oDate = new Date();</code> //实例一个时间对象；<br><code>oDate.getFullYear();</code>   //获取系统的年；<br><code>oDate.getMonth()+1;</code>   //获取系统月份，由于月份是从0开始计算，所以要加1<br><code>oDate.getDate();</code>   // 获取系统日，<br><code>oDate.getHours();</code> //获取系统时，<br><code>oDate.getMinutes();</code> //分<br><code>oDate.getSeconds();</code> //秒<br><code>oDate.getDay();</code> //获取星期几  （星期一   对应 1 ，其余2，3，4，5，6同理，星期天为 0 ！！！）</p>
+<h2 id="javascript-把日期减一天"><a href="#javascript-把日期减一天" class="headerlink" title="javascript 把日期减一天"></a>javascript 把日期减一天</h2><p>var today=new Date();<br>var t=today.getTime()-1000<em>60</em>60*24;<br>var yesterday=new Date(t);</p>
+<h2 id="js时间戳怎么转成日期格式"><a href="#js时间戳怎么转成日期格式" class="headerlink" title="js时间戳怎么转成日期格式"></a>js时间戳怎么转成日期格式</h2><p>/Date(1354116249000)/ 这样的格式怎么转成时间格式</p>
+<ol>
+<li><p>new Date(1354116249000)   可以将时间戳转为中国标准时间</p>
+</li>
+<li><p>自定义格式<br>js需要把时间戳转为为普通格式，一般的情况下可能用不到的，<br>下面先来看第一种吧</p>
+</li>
+</ol>
+<p><code>&lt;script&gt;     
+function getLocalTime(nS) {     
+   return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,&#39; &#39;);     
+}     
+alert(getLocalTime(1293072805));     
+&lt;/script&gt;</code></p>
+<p>结果是<br>2010年12月23日 10:53<br>第二种</p>
+<p><code>&lt;script&gt;     
+function getLocalTime(nS) {     
+    return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,17)}     
+alert(getLocalTime(1293072805));     
+&lt;/script&gt;</code> </p>
+<p>如果你想得到这样格式的怎么办呢？<br>2010-10-20 10:00:00<br>看下面代码吧</p>
+<p><code>&lt;script&gt;     
+    function getLocalTime(nS) {     
+       return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, &quot;-&quot;).replace(/日/g, &quot; &quot;);      
+    }     
+    alert(getLocalTime(1177824835));     
+    &lt;/script&gt;</code>  </p>
+<h2 id="JS解绑事件"><a href="#JS解绑事件" class="headerlink" title="JS解绑事件"></a>JS解绑事件</h2><p>element.on();<br>element.off();unbind();</p>
+<h2 id="JS清空数组"><a href="#JS清空数组" class="headerlink" title="JS清空数组"></a>JS清空数组</h2><p>方式1、splice<br>var ary = [1,2,3,4];<br>ary.splice(0,ary.length);<br>console.log(ary); // 输出 []，空数组，即被清空了<br>方式2、length赋值为0<br>var ary = [1,2,3,4];<br>ary.length = 0;<br>console.log(ary); // 输出 []，空数组，即被清空了<br>方式3、赋值为[]<br>var ary = [1,2,3,4];<br>ary = []; // 赋值为一个空数组以达到清空原数组</p>
+<h2 id="JS中input之radio-checkbox"><a href="#JS中input之radio-checkbox" class="headerlink" title="JS中input之radio checkbox"></a>JS中input之radio checkbox</h2><p>Radio 对象代表 HTML 表单中的单选按钮。<br>在 HTML 表单中 <input type="radio"> 每出现一次，一个 Radio 对象就会被创建。<br>单选按钮是表示一组互斥选项按钮中的一个。当一个按钮被选中，之前选中的按钮就变为非选中的。</p>
+<p>eg。</p>
+<p><input id="no-check" type="checkbox" value="1">全选未见异常</p>
+<p>springFormRadioButtons(“a.childAsphyxia” $tool.dict.haveOrNoTwo “” “”)<br>springFormRadioButtons(“a.deformity” $tool.dict.haveOrNoTwo “” “”)</p>
+<p>js：<br>$(“#no-check”).click(function () {<br>    if($(“#no-check”).attr(“checked”)==”checked”){   //判断是否选中<br>        $(“input:radio[name=’childAsphyxia’]”).eq(0).attr(“checked”,”true”);   //选择<br>        $(“input:radio[name=’deformity’]”).eq(0).attr(“checked”,”true”);<br>｝else{<br>$(“input:radio[name=’childAsphyxia’]”).eq(0).removeAttr(“checked”);  //不选<br>$(“input:radio[name=’deformity’]”).eq(0).removeAttr(“checked”);<br>}</p>
+<h2 id="JS实现模糊匹配"><a href="#JS实现模糊匹配" class="headerlink" title="JS实现模糊匹配"></a>JS实现模糊匹配</h2><p>//字符串方法indexOf<br>var len = list.length;<br>var arr = [];<br>for(var i=0;i<len;i++){ 如果字符串中不包含目标字符会返回-1="" if(list[i].indexof(keyword)="">=0){<br>        arr.push(list[i]);<br>    }<br>}<br>return arr;</len;i++){></p>
+<p>//正则表达式<br>var len = list.length;<br>var arr = [];<br>var reg = new RegExp(keyWord);<br>for(var i=0;i&lt;len;i++){<br>    //如果字符串中不包含目标字符会返回-1<br>    if(list[i].match(reg)){<br>        arr.push(list[i]);<br>    }<br>}<br>return arr;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/29/fifo-fru-opt/" rel="next" title="页面置换算法：FIFO、LRU、OPT">
+                <i class="fa fa-chevron-left"></i> 页面置换算法：FIFO、LRU、OPT
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/29/study-markdown/" rel="prev" title="MarkDown学习">
+                MarkDown学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="yxrswx" />
+          <p class="site-author-name" itemprop="name">yxrswx</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-string转-int，Long-，Date"><span class="nav-number">1.</span> <span class="nav-text">JS string转 int，Long  ，Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-isNaN-函数"><span class="nav-number">2.</span> <span class="nav-text">JS isNaN()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-isNull-函数"><span class="nav-number">3.</span> <span class="nav-text">JS isNull()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS输出对象的内部结构"><span class="nav-number">4.</span> <span class="nav-text">JS输出对象的内部结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS获取select标签选中的值"><span class="nav-number">5.</span> <span class="nav-text">JS获取select标签选中的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS当文本溢出包含元素时发生的事情"><span class="nav-number">6.</span> <span class="nav-text">JS当文本溢出包含元素时发生的事情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-中获取-Date-的方法"><span class="nav-number">7.</span> <span class="nav-text">JS 中获取 Date 的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript-把日期减一天"><span class="nav-number">8.</span> <span class="nav-text">javascript 把日期减一天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js时间戳怎么转成日期格式"><span class="nav-number">9.</span> <span class="nav-text">js时间戳怎么转成日期格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS解绑事件"><span class="nav-number">10.</span> <span class="nav-text">JS解绑事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS清空数组"><span class="nav-number">11.</span> <span class="nav-text">JS清空数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS中input之radio-checkbox"><span class="nav-number">12.</span> <span class="nav-text">JS中input之radio checkbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS实现模糊匹配"><span class="nav-number">13.</span> <span class="nav-text">JS实现模糊匹配</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yxrswx</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
